@@ -3,7 +3,14 @@ import { useEffect, useRef, useCallback, useState } from 'react'
 
 export type ConnectionStatus = 'connecting' | 'connected' | 'disconnected' | 'reconnecting'
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8080'
+function getWsUrl() {
+  if (process.env.NEXT_PUBLIC_WS_URL) return process.env.NEXT_PUBLIC_WS_URL
+  if (typeof window === 'undefined') return 'ws://localhost:8080'
+  const { hostname, protocol } = window.location
+  const wsProtocol = protocol === 'https:' ? 'wss:' : 'ws:'
+  return `${wsProtocol}//${hostname}:8080`
+}
+const WS_URL = getWsUrl()
 const MAX_RETRIES = 5
 const BASE_DELAY = 1000
 
