@@ -66,7 +66,7 @@ export default function HomePage() {
         {/* Create party */}
         <div className="card space-y-3">
           <h2 className="font-semibold text-christmas-gold">Start a party</h2>
-          <p className="text-sm text-white/60">You'll be the director — you control which song is playing.</p>
+          <p className="text-sm text-white/60">You&apos;ll be the director — you control which song is playing.</p>
           <button className="btn-primary w-full" onClick={handleCreate}>
             🎅 Create party
           </button>
