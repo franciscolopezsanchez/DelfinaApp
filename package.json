@@ -2,7 +2,7 @@
   "name": "christmas-carol",
   "private": true,
   "scripts": {
-    "dev": "turbo dev",
+    "dev": "turbo dev --continue",
     "build": "turbo build",
     "lint": "turbo lint",
     "typecheck": "turbo typecheck"

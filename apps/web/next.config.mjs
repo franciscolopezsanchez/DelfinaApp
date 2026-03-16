@@ -1,6 +1,6 @@
-import type { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
+
+const nextConfig = {
   transpilePackages: ['@christmas-carol/types'],
 }
 
